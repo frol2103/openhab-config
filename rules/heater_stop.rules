@@ -1,10 +1,10 @@
 var Timer timer
 
-rule "stop heater after 15 min"
+rule "stop heater after x min"
 when
     Item heater changed to ON
 then
-    timer = createTimer(now.plusSeconds(1000)) [|
+    timer = createTimer(now.plusSeconds(1800)) [|
         sendCommand(heater, OFF)
     ]
 end

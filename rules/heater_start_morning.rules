@@ -3,7 +3,7 @@ import org.joda.time.*
 
 rule "open heater every work day"
 when 
-    Time cron "0 50 7 ? * 1,2,3,4,5"   // Every day 16:00 hours, evaluate sunset
+    Time cron "0 40 5 ? * MON-FRI"
 then
     sendCommand(heater, ON)
 end
